@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace TasksForModul13
 {
@@ -10,19 +11,13 @@ namespace TasksForModul13
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Check(new int[] {100, 5, 6, 78, -8}));
-            Console.WriteLine(Check(new[] { -1, 2, 3, 4, 8 }));
+            string text = File.ReadAllText("C:/Users/1/Downloads/cdev_Text.txt");
+            char[] delimiters = new char[] { ' ', '\r', '\n' };       
+            var words = text.Split(delimiters, StringSplitOptions.RemoveEmptyEntries);
+            Console.WriteLine(words.Length);
         }
 
-        static bool Check(int[] num)
-        {
-            for (int i = 0; i < num.Length - 1; i++)
-            {
-                if (num[i + 1] < num[i])
-                    return false;
-            }
-            return true;
-        }
+        
     }
 
 }
