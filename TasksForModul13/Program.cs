@@ -14,11 +14,11 @@ namespace TasksForModul13
             Console.WriteLine(Check(new[] { -1, 2, 3, 4, 8 }));
         }
 
-        static bool Check(int[] nums)
+        static bool Check(int[] num)
         {
-            for (int i = 0; i < nums.Length - 1; i++)
+            for (int i = 0; i < num.Length - 1; i++)
             {
-                if (nums[i + 1] < nums[i])
+                if (num[i + 1] < num[i])
                     return false;
             }
             return true;
